@@ -10,13 +10,13 @@ This is a web application built with Flask for performing Optical Character Reco
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the repository
 
 
-2. Install dependencies:
+2. Install dependencies
 
 
-3. Run the Flask application:
+3. Run the Flask application
 
 
 4. Open your web browser and go to `http://localhost:5000` to access the application.
