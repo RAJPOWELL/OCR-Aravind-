@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Result</title>
+    <style>
+        body {
+            background-color: #ffe4c4; /* Skin color */
+            color: #00008b; /* Dark Blue */
+            text-align: center;
+        }
+        header{
+            background-color: #00008b; /* Dark Blue */
+            color: #fff; /* White */
+            padding: 10px;
+            
+        }
+        footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: #00008b; /* steel blue */
+            color: white;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OCR Result</h1>
+    </header>
+    <div>
+        <h2>Extracted Data:</h2>
+        <ul>
+            {% for key, value in data.items() %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <footer>
+        <p>Made by Aravind</p>
+    </footer>
+</body>
+</html>

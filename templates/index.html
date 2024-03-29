@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR App</title>
+    <style>
+        body {
+            background-color: #ffe4c4; /* Skin color */
+            color: #00008b; /* Dark Blue */
+            text-align: center;
+        }
+        header{
+            background-color: #00008b; /* Dark Blue */
+            color: #fff; /* White */
+            padding: 10px;
+            
+        }
+        footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: #00008b; /* steel blue */
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label.upload {
+            background-color: #fff; /* White */
+            border: 2px solid #00008b; /* Dark Blue */
+            color: #00008b; /* Dark Blue */
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        label.upload:hover {
+            background-color: #00008b; /* Dark Blue */
+            color: #fff; /* White */
+        }
+        button[type="submit"] {
+            background-color: #00008b; /* Dark Blue */
+            color: #fff; /* White */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #fff; /* White */
+            color: #00008b; /* Dark Blue */
+        }
+        #image-preview {
+            margin-top: 20px;
+        }
+        #image-preview img {
+            max-width: 300px;
+            max-height: 300px;
+            border: 2px solid #00008b; /* Dark Blue */
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OCR App</h1>
+    </header>
+    <div class="container">
+        <h2>Upload an image for OCR</h2>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="file" class="upload">Choose Image</label>
+            <input type="file" id="file" name="file" accept="image/*" required onchange="previewImage(event)">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="image-preview">
+            <img id="preview" src="#" alt="Image Preview" style="display: none;">
+        </div>
+    </div>
+    <footer>
+        <p>Made by Aravind</p>
+    </footer>
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var preview = document.getElementById('preview');
+                preview.style.display = 'block';
+                preview.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>
